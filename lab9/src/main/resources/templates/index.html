@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Blogownia</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h3>BLOG</h3>
+        <div>
+            <form action="/newpost" method="POST">
+                Tytuł: <input type="text" name="title" size="150"/><br><br>
+                Treść:
+                <textarea name="content" cols="150" rows="5"></textarea><br>
+                <input type="submit" value="Dodaj wpis" />
+            </form>
+        </div>
+        <div th:each="post: ${posty}">
+            <h1 th:text="${post.title}"></h1>
+            <p th:text="${post.content}"></p>
+            <form action="/deletepost" method="POST">
+                <input name="title" type="hidden" th:value="${post.title}"/>
+                <input type="submit" value="Usun"/>
+            </form>
+        </div>
+    </body>
+</html>
