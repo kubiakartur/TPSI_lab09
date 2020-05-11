@@ -66,7 +66,7 @@ public class BlogRepository {
     try(Connection con = dataSource.getConnection();
         PreparedStatement ps = con.prepareStatement(sql)) {
 
-            ps.setString(1, id);
+            ps.setLong(1, id);
 
             ps.executeUpdate();
         }
