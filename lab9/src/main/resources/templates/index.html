@@ -24,7 +24,7 @@ and open the template in the editor.
             <h1 th:text="${post.title}"></h1>
             <p th:text="${post.content}"></p>
             <form action="/deletepost" method="POST">
-                <input name="title" type="hidden" th:value="${post.title}"/>
+                <input name="id" type="hidden" th:value="${post.id}"/>
                 <input type="submit" value="Usun"/>
             </form>
         </div>
