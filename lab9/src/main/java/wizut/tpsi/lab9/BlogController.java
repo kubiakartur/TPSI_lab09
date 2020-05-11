@@ -36,7 +36,7 @@ public class BlogController {
     
     @PostMapping("/deletepost")
     public String deletePost(BlogPost post) throws SQLException {
-        blogRepository.deletePost(post.getTitle());
+        blogRepository.deletePost(post.getId());
         return "redirect:/";
     }
 }
